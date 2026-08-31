@@ -1,0 +1,229 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   HOVAPHARM DESIGN TOKENS
+   A clinical, information-dense, premium enterprise healthcare palette.
+   Green = brand + positive/healthy states only. Never a "green app."
+   ========================================================================== */
+
+:root {
+  /* ---- Base surfaces ---- */
+  --hp-background: #FAFAF9;         /* app canvas — warm off-white, not stark */
+  --hp-surface: #FFFFFF;            /* cards, panels */
+  --hp-surface-elevated: #FFFFFF;   /* modals, popovers — paired with stronger shadow */
+  --hp-surface-sunken: #F3F4F2;     /* table stripe, input backgrounds */
+
+  /* ---- Borders ---- */
+  --hp-border: #E4E7E2;
+  --hp-border-strong: #D3D7D0;
+
+  /* ---- Typography ---- */
+  --hp-foreground: #14231C;         /* deep charcoal-green-black, not pure black */
+  --hp-foreground-muted: #5B6B62;
+  --hp-foreground-subtle: #8A968E;
+  --hp-foreground-disabled: #B7BFB9;
+  --hp-foreground-inverted: #F7FAF8;
+
+  /* ---- Brand / Primary (healthcare green) ---- */
+  --hp-primary-50: #F0F7F2;
+  --hp-primary-100: #DCEBE0;
+  --hp-primary-200: #B4D7BE;
+  --hp-primary-300: #86BE97;
+  --hp-primary-400: #55A16C;
+  --hp-primary-500: #2F7D48;
+  --hp-primary-600: #1F6337;        /* primary — buttons, active nav, links */
+  --hp-primary-700: #17502C;
+  --hp-primary-800: #123F23;
+  --hp-primary-900: #0D301B;
+
+  /* ---- Secondary (deep clinical navy — pairs with green, carries weight) ---- */
+  --hp-secondary-500: #35506B;
+  --hp-secondary-600: #263C52;
+  --hp-secondary-700: #1A2C3D;
+
+  /* ---- Semantic: Success ---- */
+  --hp-success-50: #F0F8F2;
+  --hp-success-500: #2F7D48;
+  --hp-success-600: #1F6337;
+  --hp-success-text: #17502C;
+
+  /* ---- Semantic: Warning (amber) ---- */
+  --hp-warning-50: #FDF6E9;
+  --hp-warning-400: #E0A72C;
+  --hp-warning-500: #C4901E;
+  --hp-warning-600: #9C7016;
+  --hp-warning-text: #7A5810;
+
+  /* ---- Semantic: Danger (red) ---- */
+  --hp-danger-50: #FCF0EF;
+  --hp-danger-400: #D65C4C;
+  --hp-danger-500: #C23F2E;
+  --hp-danger-600: #9E2F20;
+  --hp-danger-text: #7C2419;
+
+  /* ---- Semantic: Information (controlled blue) ---- */
+  --hp-info-50: #EEF3FA;
+  --hp-info-400: #4E7FB8;
+  --hp-info-500: #35619B;
+  --hp-info-600: #294C7D;
+  --hp-info-text: #203C63;
+
+  /* ---- Neutral gray scale (secondary information, chrome) ---- */
+  --hp-gray-50: #F7F8F6;
+  --hp-gray-100: #EEF0EC;
+  --hp-gray-200: #DEE2DA;
+  --hp-gray-300: #C4CAC0;
+  --hp-gray-400: #9CA69C;
+  --hp-gray-500: #74807A;
+  --hp-gray-600: #566259;
+  --hp-gray-700: #3E4A42;
+  --hp-gray-800: #29342D;
+  --hp-gray-900: #1B241E;
+
+  /* ---- Radius ---- */
+  --hp-radius-sm: 5px;
+  --hp-radius-md: 7px;
+  --hp-radius-lg: 10px;
+  --hp-radius-xl: 14px;
+
+  /* ---- Shadows (restrained — flat product, not glassy) ---- */
+  --hp-shadow-xs: 0 1px 2px 0 rgba(20, 35, 28, 0.05);
+  --hp-shadow-sm: 0 1px 3px 0 rgba(20, 35, 28, 0.08), 0 1px 2px -1px rgba(20, 35, 28, 0.06);
+  --hp-shadow-md: 0 4px 10px -2px rgba(20, 35, 28, 0.08), 0 2px 4px -2px rgba(20, 35, 28, 0.05);
+  --hp-shadow-lg: 0 12px 24px -6px rgba(20, 35, 28, 0.12), 0 4px 8px -4px rgba(20, 35, 28, 0.06);
+
+  /* ---- Sidebar (deep, distinct from canvas — anchors the shell) ---- */
+  --hp-sidebar-bg: #101B15;
+  --hp-sidebar-fg: #C9D3CC;
+  --hp-sidebar-fg-muted: #7E8C82;
+  --hp-sidebar-active-bg: #1B2B21;
+  --hp-sidebar-active-fg: #E9F3EC;
+  --hp-sidebar-border: #1E2B23;
+
+  /* ---- Focus ---- */
+  --hp-ring: #2F7D48;
+}
+
+@theme inline {
+  --color-background: var(--hp-background);
+  --color-foreground: var(--hp-foreground);
+  --color-surface: var(--hp-surface);
+  --color-surface-elevated: var(--hp-surface-elevated);
+  --color-surface-sunken: var(--hp-surface-sunken);
+  --color-border: var(--hp-border);
+  --color-border-strong: var(--hp-border-strong);
+
+  --color-muted: var(--hp-foreground-muted);
+  --color-subtle: var(--hp-foreground-subtle);
+
+  --color-primary-50: var(--hp-primary-50);
+  --color-primary-100: var(--hp-primary-100);
+  --color-primary-200: var(--hp-primary-200);
+  --color-primary-300: var(--hp-primary-300);
+  --color-primary-400: var(--hp-primary-400);
+  --color-primary-500: var(--hp-primary-500);
+  --color-primary-600: var(--hp-primary-600);
+  --color-primary-700: var(--hp-primary-700);
+  --color-primary-800: var(--hp-primary-800);
+  --color-primary-900: var(--hp-primary-900);
+
+  --color-secondary-500: var(--hp-secondary-500);
+  --color-secondary-600: var(--hp-secondary-600);
+  --color-secondary-700: var(--hp-secondary-700);
+
+  --color-success-50: var(--hp-success-50);
+  --color-success-500: var(--hp-success-500);
+  --color-success-600: var(--hp-success-600);
+  --color-success-text: var(--hp-success-text);
+
+  --color-warning-50: var(--hp-warning-50);
+  --color-warning-400: var(--hp-warning-400);
+  --color-warning-500: var(--hp-warning-500);
+  --color-warning-600: var(--hp-warning-600);
+  --color-warning-text: var(--hp-warning-text);
+
+  --color-danger-50: var(--hp-danger-50);
+  --color-danger-400: var(--hp-danger-400);
+  --color-danger-500: var(--hp-danger-500);
+  --color-danger-600: var(--hp-danger-600);
+  --color-danger-text: var(--hp-danger-text);
+
+  --color-info-50: var(--hp-info-50);
+  --color-info-400: var(--hp-info-400);
+  --color-info-500: var(--hp-info-500);
+  --color-info-600: var(--hp-info-600);
+  --color-info-text: var(--hp-info-text);
+
+  --color-gray-50: var(--hp-gray-50);
+  --color-gray-100: var(--hp-gray-100);
+  --color-gray-200: var(--hp-gray-200);
+  --color-gray-300: var(--hp-gray-300);
+  --color-gray-400: var(--hp-gray-400);
+  --color-gray-500: var(--hp-gray-500);
+  --color-gray-600: var(--hp-gray-600);
+  --color-gray-700: var(--hp-gray-700);
+  --color-gray-800: var(--hp-gray-800);
+  --color-gray-900: var(--hp-gray-900);
+
+  --color-sidebar-bg: var(--hp-sidebar-bg);
+  --color-sidebar-fg: var(--hp-sidebar-fg);
+  --color-sidebar-fg-muted: var(--hp-sidebar-fg-muted);
+  --color-sidebar-active-bg: var(--hp-sidebar-active-bg);
+  --color-sidebar-active-fg: var(--hp-sidebar-active-fg);
+  --color-sidebar-border: var(--hp-sidebar-border);
+
+  --radius-sm: var(--hp-radius-sm);
+  --radius-md: var(--hp-radius-md);
+  --radius-lg: var(--hp-radius-lg);
+  --radius-xl: var(--hp-radius-xl);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+* {
+  border-color: var(--hp-border);
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--hp-background);
+  color: var(--hp-foreground);
+  font-feature-settings: "cv11", "ss01", "tnum";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tabular numbers everywhere currency/quantities appear */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Visible, deliberate focus ring — never rely on color alone */
+:focus-visible {
+  outline: 2px solid var(--hp-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--hp-border-strong);
+  border-radius: 8px;
+}
